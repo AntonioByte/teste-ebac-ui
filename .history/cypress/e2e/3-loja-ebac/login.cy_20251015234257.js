@@ -31,7 +31,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#username').type('caio10@email.com');
         cy.get('#password').type('H5YcXGhnhSYWU2o');
         cy.get('.woocommerce-form > .button').click();
-        cy.get('.woocommerce-error').should('contain','Erro: A senha fornecida para o e-mail caio10@email.com está incorreta. Perdeu a senha?');
+        cy.get('.woocommerce-error').should('contain','Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.');
     
     });
 });
