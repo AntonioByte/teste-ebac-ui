@@ -3,7 +3,7 @@
 describe('Funcionalidade: Produtos', () => {
     
     before(() => {
-        cy.visit('');
+        cy.visit();
         cy.get('#primary-menu').contains('Comprar').click();
     });
     it('Selecionar o primeiro produto', () => {

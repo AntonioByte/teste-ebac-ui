@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 describe('Funcionalidade: Cadastro', () => {
 
     beforeEach(() => {
-        cy.visit('minha-conta');
+        cy.visit('minha-conta/');
     });
 
     it('Realizar cadastro', () => {

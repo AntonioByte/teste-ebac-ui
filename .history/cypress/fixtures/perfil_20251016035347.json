@@ -1,0 +1,14 @@
+{
+    "valido":{
+        "email": "caio10@email.com",
+        "senha":"H5YcXGhnhSYWU2w"
+    },
+
+    "email_invalido":{
+        "email": "caio10@email.com",
+    },
+
+    "senha_invalido":{
+        "senha":"H5YcXGhnhSYWU2o"
+    }
+}
