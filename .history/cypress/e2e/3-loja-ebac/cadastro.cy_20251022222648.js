@@ -8,14 +8,14 @@ describe('Funcionalidade: Cadastro', () => {
         cy.visit('minha-conta');
     });
 
-    it.only('Realizar cadastro', () => {
+    it('Realizar cadastro', () => {
         let nome = faker.person.firstName();
         let sobreNome = faker.person.lastName();
         let email = faker.internet.email({firstName: nome, lastName: sobreNome});
         let senha = faker.internet.password();
         
         cy.preCadastro(email, senha);
-        cy.cadastro(nome, sobreNome, email);
+        cy.cadastro()
 
     });
 });

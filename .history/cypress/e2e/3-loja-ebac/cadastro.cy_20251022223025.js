@@ -16,6 +16,8 @@ describe('Funcionalidade: Cadastro', () => {
         
         cy.preCadastro(email, senha);
         cy.cadastro(nome, sobreNome, email);
+                           
+            
 
     });
 });

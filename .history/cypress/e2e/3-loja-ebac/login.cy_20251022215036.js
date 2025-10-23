@@ -8,22 +8,26 @@ describe('Funcionalidade: Login', () => {
     });
 
     afterEach(() => {
-        //cy.screenshot();
+        cy.screenshot();
     });
-    it('Realizar login', () => {
+    it.only('Realizar login', () => {
         cy.login(perfil.valido.email, perfil.valido.senha);
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, caio10 (não é caio10? Sair)');
     });
 
     it('Inserir e-mail inválido', () => {
         
-        cy.login(perfil.invalido.email, perfil.valido.senha);
+        cy.get('#username').type(perfil.invalido.email);
+        cy.get('#password').type(perfil.valido.senha, {log:false});
+        cy.get('.woocommerce-form > .button').click();
         cy.get('.woocommerce-error').should('contain','Endereço de e-mail desconhecido. Verifique novamente ou tente seu nome de usuário.');
     });
 
     it('Inserir senha inválida', () => {
         
-        cy.login(perfil.valido.email, perfil.invalido.senha);
+        cy.get('#username').type(perfil.valido.email);
+        cy.get('#password').type(perfil.invalido.senha, {log:false});
+        cy.get('.woocommerce-form > .button').click();
         cy.get('.woocommerce-error').should('contain','Erro: A senha fornecida para o e-mail caio10@email.com está incorreta. Perdeu a senha?');
     
     });
